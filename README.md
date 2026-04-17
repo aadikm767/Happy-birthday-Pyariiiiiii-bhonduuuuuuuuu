@@ -1,184 +1,147 @@
 # Happy-birthday-Pyariiiiiii-bhonduuuuuuuuu
 This is for you
-<html lang="hi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Bhondu ❤️</title>
+    <title>Birthday Surprise</title>
     <style>
-        :root {
-            --pink: #ff85a2;
-            --dark-pink: #ff4d6d;
-            --soft-white: #fff0f3;
-        }
-
-        body, html {
-            margin: 0; padding: 0; height: 100%; width: 100%;
+        /* Basic Styling */
+        body {
+            margin: 0; padding: 0;
             font-family: 'Arial', sans-serif;
-            background-color: var(--soft-white);
+            background-color: #fff0f3;
             display: flex; justify-content: center; align-items: center;
-            overflow: hidden;
+            height: 100vh; overflow: hidden;
         }
 
-        .page {
-            position: absolute; width: 100%; height: 100%;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            text-align: center; padding: 20px; box-sizing: border-box;
-            background-color: var(--soft-white);
-            transition: opacity 0.5s ease;
+        .container {
+            text-align: center;
+            width: 90%; max-width: 400px;
+            background: white; padding: 30px;
+            border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            z-index: 10;
         }
 
-        .hidden { display: none !important; }
+        /* Hide pages by default */
+        .page { display: none; }
+        /* Show the active page */
+        .active { display: block !important; }
 
-        /* Page 1: Login */
-        .main-img {
-            width: 180px; height: 180px; border-radius: 50%;
-            border: 5px solid white; box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-            object-fit: cover; animation: bounce 3s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+        .profile-img {
+            width: 150px; height: 150px; border-radius: 50%;
+            border: 5px solid #ff85a2; object-fit: cover;
+            margin-bottom: 20px;
         }
 
         input {
-            padding: 12px; border-radius: 20px; border: 2px solid var(--pink);
-            margin-top: 20px; width: 200px; text-align: center; outline: none;
+            padding: 12px; width: 80%; border: 2px solid #ff85a2;
+            border-radius: 20px; margin-bottom: 15px; outline: none;
         }
 
-        /* Page 2: The Big Gift Box */
-        .gift-box-large {
-            font-size: 100px; cursor: pointer;
-            animation: wiggle 1s infinite;
+        button {
+            background: #ff85a2; color: white; border: none;
+            padding: 12px 25px; border-radius: 20px; cursor: pointer;
+            font-weight: bold; font-size: 16px;
         }
 
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(0); }
-            25% { transform: rotate(-5deg); }
-            75% { transform: rotate(5deg); }
-        }
+        .gift-box { font-size: 80px; cursor: pointer; margin: 20px 0; }
+        .grid { display: flex; justify-content: center; gap: 15px; }
+        .small-box { font-size: 40px; cursor: pointer; padding: 10px; background: #fff0f3; border-radius: 10px; }
 
-        /* Page 3: The Three Gifts */
-        .gift-grid { display: flex; gap: 15px; }
-        .gift-item {
-            font-size: 50px; background: white; padding: 20px;
-            border-radius: 15px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        /* Modals/Popups */
+        /* Modal styling */
         .modal {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5); display: flex;
-            justify-content: center; align-items: center; z-index: 1000;
+            display: none; position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%; background: rgba(0,0,0,0.7);
+            justify-content: center; align-items: center; z-index: 100;
         }
-
-        .modal-content {
-            background: white; padding: 30px; border-radius: 20px;
-            width: 80%; max-width: 350px; text-align: center;
-            position: relative;
-        }
-
-        .btn {
-            background: var(--pink); color: white; border: none;
-            padding: 10px 20px; border-radius: 20px; cursor: pointer;
-            margin-top: 15px; font-weight: bold;
-        }
-
-        #cake-icon { width: 120px; cursor: pointer; }
-        .photo-frame { width: 100%; border-radius: 10px; margin-top: 10px; }
     </style>
 </head>
 <body>
 
-    <audio id="myAudio" loop>
+    <audio id="bgMusic" loop>
         <source src="https://docs.google.com/uc?export=download&id=1v7OxNPdOqlXrTus4x-xNmzFKwd2UIGOS" type="audio/mpeg">
     </audio>
 
-    <div id="page1" class="page">
-        <img src="https://docs.google.com/uc?export=download&id=1QO6l3p3zUNc1sZblGxMvhXaOSW1cT7fQ" class="main-img">
-        <h2 style="color: var(--dark-pink);">Hello My Panda! ❤️</h2>
-        <input type="password" id="passInput" placeholder="Enter Password...">
-        <button class="btn" onclick="startExperience()">Unlock My Heart 🔓</button>
+    <div id="page1" class="container page active">
+        <img src="https://docs.google.com/uc?export=download&id=1QO6l3p3zUNc1sZblGxMvhXaOSW1cT7fQ" class="profile-img">
+        <h2 style="color: #ff4d6d;">Hey My Panda! ❤️</h2>
+        <p>Enter the secret code to enter:</p>
+        <input type="password" id="passInput" placeholder="Password...">
+        <br>
+        <button onclick="goToPage2()">Unlock 🔓</button>
     </div>
 
-    <div id="page2" class="page hidden">
-        <h1 style="color: var(--dark-pink);">A Surprise is Waiting...</h1>
-        <div class="gift-box-large" onclick="openSurprise()">🎁</div>
-        <p>Click the box to open!</p>
+    <div id="page2" class="container page">
+        <h2 style="color: #ff4d6d;">A Surprise for You...</h2>
+        <div class="gift-box" onclick="goToPage3()">🎁</div>
+        <p>Tap the box to open it!</p>
     </div>
 
-    <div id="page3" class="page hidden">
-        <h2 style="color: var(--dark-pink);">Choose Your Surprise!</h2>
-        <div class="gift-grid">
-            <div class="gift-item" onclick="openModal('modal1')">📦</div>
-            <div class="gift-item" onclick="openModal('modal2')">📦</div>
-            <div class="gift-item" onclick="openModal('modal3')">📦</div>
+    <div id="page3" class="container page">
+        <h2 style="color: #ff4d6d;">Choose a Gift! ✨</h2>
+        <div class="grid">
+            <div class="small-box" onclick="openGift(1)">📦</div>
+            <div class="small-box" onclick="openGift(2)">📦</div>
+            <div class="small-box" onclick="openGift(3)">📦</div>
         </div>
     </div>
 
-    <div id="modal1" class="modal hidden">
-        <div class="modal-content">
-            <h3>Make a Wish! 🕯️</h3>
-            <img src="https://cdn-icons-png.flaticon.com/512/3132/3132715.png" id="cake-icon" onclick="blowCandle()">
-            <div id="cake-status"></div>
-            <button class="btn" onclick="closeModal('modal1')">Close</button>
-        </div>
-    </div>
-
-    <div id="modal2" class="modal hidden">
-        <div class="modal-content">
-            <h3>You look so cute! ✨</h3>
-            <img src="https://docs.google.com/uc?export=download&id=1rdVd6sgKWsodlG2BhqGrRQnK875DrOVe" class="photo-frame">
-            <button class="btn" onclick="closeModal('modal2')">Close</button>
-        </div>
-    </div>
-
-    <div id="modal3" class="modal hidden">
-        <div class="modal-content">
-            <h3>From My Heart 💌</h3>
-            <p style="text-align: left; font-size: 14px; line-height: 1.5;">
-                Happy Birthday pyaari Bhonduuuu! 🎂❤️<br><br>
-                Tumhe pata hai na ki tum mere liye kitni special hai? Tum thodi si buddhu ho thodi si ziddi bhi 😝😝 lekin jaisi bhi ho... Bestest ever ho!<br><br>
-                I promise ki main hamesha tumahre saath khada raunga tumhari saari baate sunne ke liye aur tumhe har mushkil mein sambhalne ke liye. Tum hamesha aise hi hasti rehna kyunki tumhari smile dekh kar mera din ban jata hai.<br><br>
-                Stay the same, my favorite Bhonduuuu! ✨🥹🎈
-            </p>
-            <button class="btn" onclick="closeModal('modal3')">Close</button>
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="container" onclick="event.stopPropagation()">
+            <div id="modal-content"></div>
+            <button onclick="closeModal()">Close</button>
         </div>
     </div>
 
     <script>
-        const audio = document.getElementById('myAudio');
+        const music = document.getElementById('bgMusic');
 
-        function startExperience() {
-            const pass = document.getElementById('passInput').value.toLowerCase();
-            if (pass === 'panda') {
-                document.getElementById('page1').classList.add('hidden');
-                document.getElementById('page2').classList.remove('hidden');
-                // Play music on click to satisfy browser rules
-                audio.play().catch(e => console.log("Audio play failed"));
+        function goToPage2() {
+            const pw = document.getElementById('passInput').value.toLowerCase();
+            if(pw === 'panda') {
+                // Change visibility
+                document.getElementById('page1').classList.remove('active');
+                document.getElementById('page2').classList.add('active');
+                // Play Music
+                music.play().catch(e => console.log("Music needs interaction"));
             } else {
-                alert("Incorrect password, Bhondu! 😉");
+                alert("Wrong passcode! Hint: Panda 🐼");
             }
         }
 
-        function openSurprise() {
-            document.getElementById('page2').classList.add('hidden');
-            document.getElementById('page3').classList.remove('hidden');
+        function goToPage3() {
+            document.getElementById('page2').classList.remove('active');
+            document.getElementById('page3').classList.add('active');
         }
 
-        function openModal(id) {
-            document.getElementById(id).classList.remove('hidden');
+        function openGift(num) {
+            const modal = document.getElementById('modal');
+            const content = document.getElementById('modal-content');
+            modal.style.display = 'flex';
+
+            if(num === 1) {
+                content.innerHTML = `
+                    <h3>Gift #1: Blow the Candle! 🕯️</h3>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3132/3132715.png" width="100" id="cake" onclick="this.style.opacity='0.5'; document.getElementById('cmsg').innerHTML='<h3>Happy birthday bhonduuuu! 🎉</h3>'">
+                    <div id="cmsg"></div>
+                `;
+            } else if (num === 2) {
+                content.innerHTML = `
+                    <h3>Gift #2: You're Cute! ✨</h3>
+                    <img src="https://docs.google.com/uc?export=download&id=1rdVd6sgKWsodlG2BhqGrRQnK875DrOVe" width="100%" style="border-radius:10px">
+                `;
+            } else if (num === 3) {
+                content.innerHTML = `
+                    <h3>Gift #3: My Heart 💌</h3>
+                    <p style="text-align:left; font-size:14px">Happy Birthday pyaari Bhonduuuu! 🎂❤️<br><br>Tumhe pata hai na ki tum mere liye kitni special hai? Tum thodi si buddhu ho thodi si ziddi bhi... I promise ki main hamesha tumahre saath khada raunga. Stay the same, my favorite Bhonduuuu! ✨</p>
+                `;
+            }
         }
 
-        function closeModal(id) {
-            document.getElementById(id).classList.add('hidden');
-        }
-
-        function blowCandle() {
-            document.getElementById('cake-icon').style.opacity = '0.4';
-            document.getElementById('cake-status').innerHTML = "<h2 style='color: #ff4d6d'>Happy Birthday Bhonduuuu! 🎉</h2>";
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
         }
     </script>
 </body>
